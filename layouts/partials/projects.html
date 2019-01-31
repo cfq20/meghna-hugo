@@ -1,12 +1,12 @@
-{{ if .Site.Data.portfolio.enable}}
+{{ if .Site.Data.projects.enable}}
 {{"<!-- Portfolio Section -->" | safeHTML}}
-<section class="portfolio section" id="portfolio">
+<section class="portfolio section" id="projects">
     <div class="container">
         <div class="row ">
             <div class="col-lg-12">
                 {{"<!-- section title -->" | safeHTML}}
                 <div class="title text-center">
-                    <h2> {{ with .Site.Data.portfolio.heading }} {{ . }} {{ end }} <span class="color">{{ with .Site.Data.portfolio.headingSpan }} {{ . }} {{ end }}</span></h2>
+                    <h2> {{ with .Site.Data.projects.heading }} {{ . }} {{ end }} <span class="color">{{ with .Site.Data.projects.headingSpan }} {{ . }} {{ end }}</span></h2>
                     <div class="border"></div>
                 </div>
                 {{"<!-- /section title -->" | safeHTML}}
@@ -16,7 +16,7 @@
             <div class="col-md-12">
                 <div class="portfolio-filter">
                     <button type="button" data-filter="all">All</button>
-                    {{ range .Site.Data.portfolio.filterList }}
+                    {{ range .Site.Data.projects.filterList }}
                     <button type="button" data-filter=".{{ .filterType }}">{{ .filterTitle }}</button>
                     {{ end }}
                 </div>
@@ -24,7 +24,7 @@
         </div>
         <div class="row portfolio-items-wrapper">
             {{"<!-- portfolio item -->" | safeHTML}}
-            {{ range .Site.Data.portfolio.portfolioItem }}
+            {{ range .Site.Data.projects.projectItem }}
             <div class="mix col-md-4 {{ .types }}">
                 <div class="portfolio-block">
                     <img class="img-responsive" src="{{ .image | absURL}}" alt="work-image">
